@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Backfill</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/datatable.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>-->
+
+
+<!--    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+
+    <link type="text/css" rel="stylesheet" href="/assets/css/wellness.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.3.8/jquery.datetimepicker.css">
+    <script src="	https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.3.8/jquery.datetimepicker.js"></script>
+
+    <!-- =======================================================
+    * Template Name: Arsha - v4.3.0
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center" style="padding-left: 100px">
+
+        <h1 class="logo me-auto"><a href="/">SMILE</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li class="dropdown"><a href="#"><span>Member</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/auth/req/">list</a></li>
+                        <li><a href="/auth/delete">deregistration</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>Activity</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="/activity/">Activity</a></li>
+                                <li><a href="/activityDetails/">Activity Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Health</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="/daily/">Daily</a></li>
+
+                                <li><a href="/epoch/">Epoch</a></li>
+                                <li><a href="/sleep/">Sleep</a></li>
+                                <li><a href="/bodyComps/">Body Composition</a></li>
+                                <li><a href="/stressDetail/">Stress Details</a></li>
+                                <li><a href="/userMetrics/">User Metrics</a></li>
+                                <li><a href="/pulseOx/">Pulse Ox</a></li>
+                                <li><a href="/respiration/">Respiration</a></li>
+                                <li><a href="/healthSnapshot/">Health Snapshot</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="/backfill/">Backfill</a></li>
+                <li><a class="getstarted scrollto" id="logout" onclick="logout()" style="color: white;">LOGOUT</a></li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main" style="margin-top:85px; margin-bottom:300px;display: none;">
+
+    <section class="ftco-section">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-8 col-xs-12 controls">
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">Email</label>
+                                <div class="col-md-5">
+                                    <input id="email" name="email" class="form-control input-md" type="text" value="">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="backfillStartTime">Summary Start Time</label>
+                                <div class="col-md-5">
+                                    <div class="input-group date" id="backfillDatetimepickerStart">
+                                        <input id="backfillStartTime" name="backfillStartTime" placeholder="Unix timestamp in seconds" class="form-control input-md" required="" type="text" value="1641052260" title="Sat, 01 Jan 2022 15:51:00 GMT">
+                                        <span id="backfillStartTimeIcon" class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                                    </div>
+                                </div>
+                                <label id="backfillStartTimeLabel" class="label label-primary time-label">Sat, 01 Jan 2022 15:51:00 GMT</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="backfillEndTime">Summary End Time</label>
+                                <div class="col-md-5">
+                                    <div class="input-group date" id="backfillDatetimepickerEnd">
+                                        <input id="backfillEndTime" name="backfillEndTime" placeholder="Unix timestamp in seconds" class="form-control input-md" required="" type="text" value="1641138660" title="Sun, 02 Jan 2022 15:51:00 GMT">
+                                        <span id="backfillEndTimeIcon" class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                                <label id="backfillEndTimeLabel" class="label label-primary time-label">Sun, 02 Jan 2022 15:51:00 GMT</label>
+                            </div>
+
+                            <button id="activity" onclick="getBackfill(this)" class="btn btn-primary disabled">Activity</button>
+                            <button id="activityDetail" onclick="getBackfill(this)" class="btn btn-primary disabled">Activity Detail</button>
+                            <button id="daily" onclick="getBackfill(this)" class="btn btn-primary disabled">Daily</button>
+                            <button id="epoch" onclick="getBackfill(this)" class="btn btn-primary disabled">Epoch</button>
+                            <button id="sleep" onclick="getBackfill(this)" class="btn btn-primary disabled">Sleep</button>
+                            <button id="bodyComps" onclick="getBackfill(this)" class="btn btn-primary disabled">Body Composition</button>
+                            <button id="stressDetail" onclick="getBackfill(this)" class="btn btn-primary disabled">Stress Detail</button>
+                            <button id="UserMetrics" onclick="getBackfill(this)" class="btn btn-primary disabled">User Metrics</button>
+                            <button id="pulseOx" onclick="getBackfill(this)" class="btn btn-primary disabled">PulseOx</button>
+                            <button id="respiration" onclick="getBackfill(this)" class="btn btn-primary disabled">Respiration</button>
+                            <button id="healthSnapshot" onclick="getBackfill(this)" class="btn btn-primary disabled">Health Snapshot</button>
+                            <button id="all" onclick="getBackfill(this)" class="btn btn-second disabled">All</button>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--row end-->
+            </div>
+        </div>
+    </section>
+
+
+</main>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="container footer-bottom clearfix">
+        <div class="credits">
+            Designed by <a href="https://bootstrapmade.com/">smile</a>
+        </div>
+        <div class="col-lg-12 col-md-12 footer-contact">
+            <h5 style="color: white">SMILE</h5>
+        </div>
+        <div class="copyright">
+            &copy; Copyright <strong><span>SMILE</span></strong>. All Rights Reserved
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+
+
+<!-- Template Main JS File -->
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/datatable.js"></script>
+<script>
+
+
+$(document).ready( function () {
+
+$.ajax({
+                type : 'GET',
+                url: "/member/",
+                success: function(data) {
+                    if(data == "success") {
+                    $("#main").show();
+
+                    } else {
+                         location.href="/"
+                    }
+                },
+                error: function(error) {
+                    alert("SESSION ERROR");
+                }
+            });
+} );
+
+  function getBackfill(backfillType){
+
+    var backfill = backfillType.id;
+
+     var email = $("#email").val();
+     var start = $("#backfillStartTime").val();
+     var end = $("#backfillEndTime").val();
+
+         var params = {
+        "email": email,
+        "summaryStartTimeInSeconds": start,
+        "summaryEndTimeInSeconds": end
+            };
+
+      if(email.search(/\s/) != -1) {
+        alert("이메일에는 공백이 들어갈 수 없습니다.");
+    } else {
+        if(email.trim().length != 0) {
+            $.ajax({
+                type : 'POST',
+                contentType: 'application/json',
+               data: JSON.stringify(params),
+                url: "/backfill/" + backfill,
+                success: function(data) {
+                    if(data == "success") {
+                        alert(data);
+                        location.href="/backfill/"
+                    } else {
+                        alert(data);
+                    }
+                },
+                error: function(error) {
+                    alert("ERROR : BACKFILL FAIL");
+                }
+            });
+        } else {
+            alert("이메일을 입력해주세요.");
+        }
+    }
+
+ }
+
+
+
+function logout() {
+
+            $.ajax({
+                type : 'POST',
+                url: "/member/logout",
+                success: function(data) {
+                    if(data == "success") {
+                        location.href="/"
+                    }
+                },
+                error: function(error) {
+                    alert("LOGOUT ERROR");
+                }
+            });
+}
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+        var backfillStartTime = new Date($("#backfillStartTime" ).val()*1000).toUTCString();
+        $("#backfillStartTime").attr({
+            "title" : backfillStartTime
+        });
+        $('#backfillStartTimeLabel').html(backfillStartTime);
+
+        var backfillEndTime = new Date($("#backfillEndTime" ).val()*1000).toUTCString();
+        $("#backfillEndTime").attr({
+            "title" : backfillEndTime
+        });
+        $('#backfillEndTimeLabel').html(backfillEndTime);
+
+        $('#agreementCheckbox').attr('checked', false);
+        $("#backfillButton").prop('disabled', true);
+
+    });
+
+    $('#backfillStartTime').datetimepicker({
+        format:'unixtime',
+        onChangeDateTime:function(dp,$input){
+            var backfillStartTime = new Date($input.val()*1000).toUTCString();
+
+            $("#backfillStartTime").attr({
+                "title" : backfillStartTime
+            });
+
+            $('#backfillStartTimeLabel').html(backfillStartTime);
+        }
+    });
+
+    $( "#backfillStartTimeIcon" ).click(function() {
+        document.getElementById("backfillStartTime").focus();
+    });
+
+    $('#backfillEndTime').datetimepicker({
+        format:'unixtime',
+        onChangeDateTime:function(dp,$input){
+            var backfillEndTime = new Date($input.val()*1000).toUTCString();
+
+            $("#backfillEndTime").attr({
+                "title" : backfillEndTime
+            });
+
+            $('#backfillEndTimeLabel').html(backfillEndTime);
+        }
+    });
+
+    $( "#backfillEndTimeIcon" ).click(function() {
+        document.getElementById("backfillEndTime").focus();
+    });
+
+    $('#agreementCheckbox').click(function() {
+        if (!$(this).is(':checked')) {
+            $("#backfillButton").addClass("disabled");
+            $("#backfillButton").prop('disabled', true);
+        }
+        else {
+            $("#backfillButton").removeClass("disabled");
+            $("#backfillButton").prop('disabled', false);
+        }
+    });
+
+</script>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

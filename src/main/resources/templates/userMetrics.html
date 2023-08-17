@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>User Metrics</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="/assets/img/favicon.png" rel="icon">
+    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <!-- Template Main CSS File -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/datatable.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- =======================================================
+    * Template Name: Arsha - v4.3.0
+    * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script>
+$('.carousel').carousel({ interval: 1000 });
+</script>
+
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center" style="padding-left: 100px">
+
+        <h1 class="logo me-auto"><a href="/">SMILE</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="/">Home</a></li>
+                <li class="dropdown"><a href="#"><span>Member</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a href="/auth/req/">list</a></li>
+                        <li><a href="/auth/delete">deregistration</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>Activity</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="/activity/">Activity</a></li>
+                                <li><a href="/activityDetails/">Activity Detail</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Health</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="/daily/">Daily</a></li>
+
+                                <li><a href="/epoch/">Epoch</a></li>
+                                <li><a href="/sleep/">Sleep</a></li>
+                                <li><a href="/bodyComps/">Body Composition</a></li>
+                                <li><a href="/stressDetail/">Stress Details</a></li>
+                                <li><a href="/userMetrics/">User Metrics</a></li>
+                                <li><a href="/pulseOx/">Pulse Ox</a></li>
+                                <li><a href="/respiration/">Respiration</a></li>
+                                <li><a href="/healthSnapshot/">Health Snapshot</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="nav-link scrollto" href="/backfill/">Backfill</a></li>
+                <li><a class="getstarted scrollto" id="logout" onclick="logout()" style="color: white;">LOGOUT</a></li>
+
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main" style="margin-top:85px; margin-bottom:300px;display: none;">
+
+    <section class="ftco-section" style="margin-bottom: -50px;">
+        <p style="text-align:center; font-size: 30pt; color: black;">USER METRICS</p>
+    </section>
+
+    <section class="ftco-section">
+
+        <div class="container">
+
+            <div class="row" style="justify-content: right;">
+                <form name="form" action="/userMetrics/search" method="get" onsubmit="return check()">
+                    <input type="text" id="search" name="token" placeholder="token">
+                    <button type="submit">검색</button>
+                </form>
+            </div>
+
+            <div class="row">
+
+                    <div class="col-md-12">
+
+
+                            <table class="table" id="member">
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>userId</th>
+                                    <th>userAccessToken</th>
+                                    <th>summaryId</th>
+                                    <th>calendarDate</th>
+                                    <th>vo2Max</th>
+                                    <th>enhanced</th>
+
+                                    <th>fitnessAge</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="userMetric : ${userMetricList}">
+                                    <td th:text="${userMetric.id}"></td>
+                                    <td th:text="${userMetric.userId}"></td>
+                                    <td th:text="${userMetric.userAccessToken}"></td>
+                                    <td th:text="${userMetric.summaryId}"></td>
+                                    <td th:text="${userMetric.calendarDate}"></td>
+                                    <td th:text="${userMetric.vo2Max}"></td>
+                                    <td th:text="${userMetric.enhanced}"></td>
+                                    <td th:text="${userMetric.fitnessAge}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        <nav aria-label="Page navigation example"
+                             th:with="start=${(pages.number/maxPage)*maxPage + 1},
+                  end=(${(pages.totalPages == 0) ? 1 : (start + (maxPage - 1) < pages.totalPages ? start + (maxPage - 1) : pages.totalPages)})">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item" th:if="${start > 1}">
+                                    <a class="page-link"  th:href="@{/userMetrics/?(page=0)}" th:text="'<<'"></a></li>
+                                </li>
+
+                                <li class="page-item" th:if="${start > 1}">
+                                    <a class="page-link" th:href="@{/userMetrics/?(page=${start - maxPage})}" th:text="'<'"></a>
+                                </li>
+
+
+                                <li class="page-item" th:each="page: ${#numbers.sequence(start, end)}">
+                                    <a class="page-link"  th:href="@{/userMetrics/?(page=${page-1})}" th:text="${page}"></a></li>
+                                </li>
+
+                                <li class="page-item" th:if="${end < pages.totalPages}">
+                                    <a class="page-link"  th:href="@{/userMetrics/?(page=${start + maxPage})}" th:text="'>'"></a>
+                                </li>
+
+                                <li class="page-item" th:if="${end < pages.totalPages}">
+                                    <a class="page-link"  th:href="@{/userMetrics/?(page=${pages.totalPages-1})}" th:text="'>>'"></a></li>
+                                </li>
+                            </ul>
+
+                        </nav>
+
+                    </div>
+
+
+            </div>
+            <!--row end-->
+
+            <form action="/userMetrics/excel" method="post">
+                <input type="text" id="email" name="email" placeholder="email">
+                <button type="submit">Excel</button>
+            </form>
+
+        </div>
+    </section>
+
+
+
+
+</main>
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="container footer-bottom clearfix">
+
+        <div class="credits">
+               Designed by <a href="https://bootstrapmade.com/">smile</a>
+        </div>
+
+
+
+        <div class="col-lg-12 col-md-12 footer-contact">
+            <h5 style="color: white">SMILE</h5>
+        </div>
+
+        <div class="copyright">
+            &copy; Copyright <strong><span>SMILE</span></strong>. All Rights Reserved
+        </div>
+
+
+
+
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+
+
+<!-- Template Main JS File -->
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/datatable.js"></script>
+
+<script>
+
+$(document).ready( function () {
+
+
+$.ajax({
+                type : 'GET',
+                url: "/member/",
+                success: function(data) {
+                    if(data == "success") {
+
+                    $("#main").show();
+
+                    } else {
+                         location.href="/"
+                    }
+                },
+                error: function(error) {
+                    alert("SESSION ERROR");
+                }
+            });
+} );
+
+function initFocus() {
+    document.getElementById('mention').focus();
+}
+
+
+
+function logout() {
+
+            $.ajax({
+                type : 'POST',
+                url: "/member/logout",
+                success: function(data) {
+                    if(data == "success") {
+                        location.href="/"
+                    }
+                },
+                error: function(error) {
+                    alert("LOGOUT ERROR");
+                }
+            });
+}
+
+
+function check() {
+
+  if(form.token.value == "") {
+
+    alert("검색어를 입력해주세요.");
+
+    form.id.focus();
+
+    location.reload();
+
+    return false;
+
+  }
+
+  else return true;
+
+}
+</script>
+
+</body>
+
+</html>
+
+
